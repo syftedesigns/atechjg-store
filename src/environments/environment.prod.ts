@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  REST: 'http://development.syftedesigns.com/atech/atech_api/routes'
 };
