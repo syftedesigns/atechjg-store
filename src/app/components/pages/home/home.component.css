@@ -1,0 +1,66 @@
+.product-title-small {
+    font-size: 12px;
+}
+
+.image-product-small {
+    width: 180px;
+    height: 180px;
+}
+
+.carousel-block {
+    opacity: 1;
+    display: block;
+}
+
+.carousel-layout {
+    width: 2244px;
+    left: 0px;
+    display: block;
+    transition: all 0ms ease 0s;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.carousel-layout-row2 {
+    width: 2076px;
+    left: 0px;
+    display: block;
+    transition: all 0ms ease 0s;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.carousel-layout-sidebar {
+    width: 692px;
+    left: 0px;
+    display: block;
+    transition: all 0ms ease 0s;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.carousel-layout-slider {
+    width: 5584px;
+    left: 0px;
+    display: block;
+    transition: all 0ms ease 0s;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.banner-slider {
+    background-image: url(../../../../assets/img/banner/security-banner6.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.banner-slider2 {
+    background-image: url(../../../../assets/img/banner/hoverboard-banner2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.banner-slider3 {
+    background-image: url(../../../../assets/img/banner/airpod-banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}

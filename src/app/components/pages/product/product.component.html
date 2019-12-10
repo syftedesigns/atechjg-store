@@ -1,0 +1,166 @@
+<!-- product-main-area-start -->
+<div class="product-main-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                <div class="flexslider">
+                    <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                        <ul class="slides" style="width: 1200%; transition-duration: 0s; transform: translate3d(-1464px, 0px, 0px);">
+                            <li [attr.data-thumb]="productInfo.photo" class="clone slider-item" aria-hidden="true">
+                                <img [src]="productInfo.photo" [alt]="productInfo.nombre" draggable="false">
+                            </li>
+                            <li [attr.data-thumb]="productInfo.photo" [attr.data-thumb-alt]="productInfo.nombre" class="slider-item">
+                                <img [src]="productInfo.photo" [alt]="productInfo.nombre" draggable="false">
+                            </li>
+                            <li [attr.data-thumb]="productInfo.photo" [attr.data-thumb-alt]="productInfo.nombre" class="slider-item">
+                                <img [src]="productInfo.photo" [alt]="productInfo.nombre" draggable="false">
+                            </li>
+                            <li [attr.data-thumb]="productInfo.photo" [attr.data-thumb-alt]="productInfo.nombre" class="flex-active-slide slider-item">
+                                <img [src]="productInfo.photo" [alt]="productInfo.nombre" draggable="false">
+                            </li>
+                            <li [attr.data-thumb]="productInfo.photo" class="clone slider-item" aria-hidden="true">
+                                <img [src]="productInfo.photo" [alt]="productInfo.nombre" draggable="false">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- product info -->
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                <div class="product-info-main">
+                    <div class="page-title">
+                        <h1>{{productInfo.nombre}}</h1>
+                    </div>
+                    <div class="product-reviews-summary">
+                        <div class="rating-summary">
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info-price">
+                        <div class="price-final">
+                            <span class="new">${{productInfo.comentario}}</span>
+                            <!--<span class="old">$34.00</span>-->
+                        </div>
+                        <div class="product-info-stock-sku">
+                            <span *ngIf="productInfo.moq >= 1">En Stock</span>
+                            <div class="product-attribute">
+                                <span>SKU</span>
+                                <span class="value">{{productInfo.SKU}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-add-form">
+                        <form action="#">
+                            <div class="quality-button">
+                                <label>Cantidad</label>
+                                <input onkeypress="return false;" [(ngModel)]="moqQty" name="moq" [max]="productInfo.moq" min="1" class="qty" type="number" value="1">
+                            </div>
+                            <button (click)="OpenPatnerDialog(moqQty, productInfo);" mat-raised-button color="primary">
+                                <i class="fa fa-eye"></i>&nbsp;Contactar con el proveedor
+                            </button>
+                        </form>
+                    </div>
+                    <div class="product-social-links">
+                        <div class="product-addto-links-text">
+                            <p [innerHtml]="productInfo.specs"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end product info -->
+        </div>
+    </div>
+</div>
+<!-- product-main-area-end -->
+<!-- product-info-area-start -->
+<div class="product-info-area mt-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active"><a href="#Details" data-toggle="tab">Especificaciones</a></li>
+                    <!--<li><a href="#Reviews" data-toggle="tab">Reviews 3</a></li>-->
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="Details">
+                        <div class="valu">
+                            <p [innerHTML]="productInfo.specs2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- product-info-area-end -->
+<!-- related -->
+<div class="onsaleproduct-area ptb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Productos relacionados</h2>
+                </div>
+                <div class="saleproduct-active owl-carousel owl-theme" style="opacity: 1; display: block;">
+                    <!-- single-product-start -->
+                    <div class="owl-wrapper-outer">
+                        <div class="owl-wrapper wrapper-related">
+                            <owl-carousel-o [options]="owlRelatedConfig" #owlrelated>
+                                <ng-container *ngFor="let owl of relatedProducts; let i = index">
+                                    <ng-template carouselSlide [id]="owl.id + i">
+                                        <div class="owl-item" style="width: 187px;">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a [routerLink]="['/redirect/' + 'product/' + owl.id]">
+                                                        <img [title]="owl.nombre" [src]="owl.photo" [alt]="owl.nombre">
+                                                    </a>
+                                                </div>
+                                                <div class="product-text">
+                                                    <h3>
+                                                        <a [routerLink]="['/redirect/' + 'product/' + owl.id]">{{owl.nombre}}</a>
+                                                    </h3>
+                                                    <div class="rating">
+                                                        <ul>
+                                                            <li><a onclick="return false;" href="#"><i class="fa fa-star"></i></a></li>
+                                                            <li><a onclick="return false;" href="#"><i class="fa fa-star"></i></a></li>
+                                                            <li><a onclick="return false;" href="#"><i class="fa fa-star"></i></a></li>
+                                                            <li><a onclick="return false;" href="#"><i class="fa fa-star"></i></a></li>
+                                                            <li><a onclick="return false;" href="#"><i class="fa fa-star"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="price">
+                                                        <ul>
+                                                            <li><span class="new-price">${{owl.comentario}}</span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="link-button">
+                                                        <ul>
+                                                            <li><a [routerLink]="['/redirect/' + 'product/' + owl.id]"><i class="fa fa-eye"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ng-container>
+                            </owl-carousel-o>
+                        </div>
+                    </div>
+                    <!-- single-product-end -->
+                    <div class="owl-controls clickable">
+                        <div class="owl-buttons">
+                            <div (click)="owlrelated.prev();" class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                            <div (click)="owlrelated.next();" class="owl-next"><i class="fa fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end related -->

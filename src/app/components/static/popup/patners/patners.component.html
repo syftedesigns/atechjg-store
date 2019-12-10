@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>
+                    Contactar con el proveedor
+                </h3>
+                <form (ngSubmit)="patnerFormSend(formPatner)" #formPatner="ngForm" ngNativeValidate class="ptb-40">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col">
+                                <mat-form-field appearance="fill">
+                                    <mat-label class="font-14">Cantidad</mat-label>
+                                    <input [(ngModel)]="qtyRequired" required name="moq" matInput type="number">
+                                    <mat-hint class="font-10">¿Qué cantidad estas interesado?</mat-hint>
+                                </mat-form-field>
+                            </div>
+                            <div class="col">
+                                <mat-form-field appearance="fill">
+                                    <mat-label class="font-14">Producto</mat-label>
+                                    <input [(ngModel)]="productInfo.nombre" required type="text" name="product_name" matInput>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col">
+                                <mat-form-field appearance="fill">
+                                    <mat-label class="font-14">Nombre y apellido</mat-label>
+                                    <input [(ngModel)]="sessionId.fullname" name="fullname" required matInput type="text">
+                                </mat-form-field>
+                            </div>
+                            <div class="col">
+                                <mat-form-field appearance="fill">
+                                    <mat-label class="font-14">Correo electrónico</mat-label>
+                                    <input [(ngModel)]="sessionId.email" required type="email" name="email" matInput placeholder="mail@example.com">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col">
+                                <mat-form-field appearance="fill">
+                                    <mat-label class="font-14">Teléfono</mat-label>
+                                    <input [(ngModel)]="sessionId.phone" name="phone" required matInput type="number">
+                                </mat-form-field>
+                            </div>
+                            <div class="col">
+                                <mat-form-field appearance="fill">
+                                    <mat-label class="font-14">País</mat-label>
+                                    <input [(ngModel)]="sessionId.country" matInput name="country" required placeholder="Placeholder">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="fill" class="w-100">
+                            <mat-label class="font-14">Mensaje</mat-label>
+                            <textarea ngModel matInput name="msg" required placeholder="¿Qué mensaje deseas enviarle al proveedor?"></textarea>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-checkbox color="primary" [(ngModel)]="checked" name="checkbox">Guardar mi información de contacto&nbsp;<small>(Opcional)</small> </mat-checkbox><br>
+                        <mat-hint class="font-10">No volveremos a preguntarte tu información de contacto, si asi lo deseas</mat-hint>
+                    </div>
+                    <div class="form-group">
+                        <button mat-raised-button type="submit" color="primary">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

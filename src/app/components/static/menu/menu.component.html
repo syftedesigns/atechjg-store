@@ -1,0 +1,206 @@
+<!-- mobile-menu-area-start -->
+<!-- mobile-menu-area-end -->
+<mat-toolbar class="d-lg-none" color="primary">
+    <mat-toolbar-row>
+        <span>MENU</span>
+        <span class="example-spacer"></span>
+        <button mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="categorias">Categorías</button>
+            <button mat-menu-item>Inicio</button>
+            <button mat-menu-item>Sourcing</button>
+            <button mat-menu-item>Contacto</button>
+            <button mat-menu-item>AtechJG Web</button>
+        </mat-menu>
+        <!-- Categorías -->
+        <mat-menu #categorias="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="celulares">Accesorios para celular</button>
+            <button mat-menu-item [matMenuTriggerFor]="auriculares">Auriculares</button>
+            <button mat-menu-item [matMenuTriggerFor]="movilidad">Movilidad</button>
+            <button mat-menu-item [matMenuTriggerFor]="computacion">Computación</button>
+            <button mat-menu-item [matMenuTriggerFor]="seguridad">Seguridad</button>
+            <button [routerLink]="['/search/category/Fitness']" mat-menu-item>Fitness</button>
+            <button [routerLink]="['/search/category/Computacion']" mat-menu-item>Computación</button>
+            <button [routerLink]="['/search/category/Internet']" mat-menu-item>Internet</button>
+            <button [routerLink]="['/search/category/Notebook']" mat-menu-item>Laptops</button>
+        </mat-menu>
+        <!-- celulares -->
+        <mat-menu #celulares="matMenu">
+            <button [routerLink]="['/search/category/Wall charger']" mat-menu-item>Cargador de pared</button>
+            <button [routerLink]="['/search/category/Car Charger']" mat-menu-item>Cargador de coche</button>
+            <button [routerLink]="['/search/category/Cable']" mat-menu-item>Cables</button>
+            <button [routerLink]="['/search/category/Empaque']" mat-menu-item>Embalaje</button>
+            <button [routerLink]="['/search/category/Varios']" mat-menu-item>Varios</button>
+        </mat-menu>
+        <!-- end celulares -->
+        <!-- auriculares -->
+        <mat-menu #auriculares="matMenu">
+            <button [routerLink]="['/search/category/BT earphones']" mat-menu-item>BT Earphones</button>
+            <button [routerLink]="['/search/category/TWS Earphones']" mat-menu-item>TWS Earphones</button>
+            <button [routerLink]="['/search/category/Headphones']" mat-menu-item>Headphones</button>
+            <button [routerLink]="['/search/category/Earphones']" mat-menu-item>Auriculares</button>
+        </mat-menu>
+        <!-- end auriculares -->
+        <!-- movilidad -->
+        <mat-menu #movilidad="matMenu">
+            <button [routerLink]="['/search/category/Monopatin electrico']" mat-menu-item>Monopatin eléctrico</button>
+            <button [routerLink]="['/search/category/aerotabla']" mat-menu-item>Aerotabla</button>
+            <button [routerLink]="['/search/category/Scooter electrico']" mat-menu-item>Scooter eléctrico</button>
+            <button [routerLink]="['/search/category/Bicicleta electrica']" mat-menu-item>Bicicleta eléctrica</button>
+            <button [routerLink]="['/search/category/Hoverboard']" mat-menu-item>Hoverboard</button>
+            <button [routerLink]="['/search/category/Miscelaneo']" mat-menu-item>Drone</button>
+            <button [routerLink]="['/search/category/Fuente']" mat-menu-item>Fuentes</button>
+            <button [routerLink]="['/search/category/Power Bank']" mat-menu-item>Power Bank</button>
+            <button [routerLink]="['/search/category/VR']" mat-menu-item>Realidad aumentada</button>
+        </mat-menu>
+        <!-- end movilidad -->
+        <!-- computacion -->
+        <mat-menu #computacion="matMenu">
+            <button [routerLink]="['/search/category/Spare parts']" mat-menu-item>Spare parts</button>
+            <button [routerLink]="['/search/category/Tablet']" mat-menu-item>Tablet</button>
+            <button [routerLink]="['/search/category/Proyector']" mat-menu-item>Proyector</button>
+            <button [routerLink]="['/search/category/CAMARA']" mat-menu-item>Cámara</button>
+            <button [routerLink]="['/search/category/Dashcams']" mat-menu-item>Dashcams</button>
+            <button [routerLink]="['/search/category/TV BOX']" mat-menu-item>TV Box</button>
+        </mat-menu>
+        <!-- end computación -->
+        <!-- seguridad -->
+        <mat-menu #seguridad="matMenu">
+            <button [routerLink]="['/search/category/Camara de seguridad']" mat-menu-item>Cámara de seguridad</button>
+            <button [routerLink]="['/search/category/Alarmas']" mat-menu-item>Alarmas</button>
+            <button [routerLink]="['/search/category/Logistica']" mat-menu-item>Logistica</button>
+            <button [routerLink]="['/search/category/Pestillo Electrico']" mat-menu-item>Pestillo Electrico</button>
+            <button [routerLink]="['/search/category/DVR']" mat-menu-item>DVR</button>
+            <button [routerLink]="['/search/category/Control de presentismo']" mat-menu-item>Control de presentismo</button>
+            <button [routerLink]="['/search/category/Control de acceso']" mat-menu-item>Control de acceso</button>
+            <button [routerLink]="['/search/category/NVR']" mat-menu-item>NVR</button>
+        </mat-menu>
+        <!-- end seguridad -->
+    </mat-toolbar-row>
+</mat-toolbar>
+<!-- header-bottom-area-start -->
+<div class="header-bottom-area hidden-sm hidden-xs" id="sticky-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <div *ngIf="global.displayMenuCategories" class="Category-area">
+                    <h3><i class="fa fa-bars"></i>Categorías</h3>
+                    <div class="category-menu">
+                        <nav>
+                            <ul>
+                                <li class="angle"><a href="#">Accesorios para celular</a>
+                                    <ul class="category-submenu category-submenu-2">
+                                        <li>
+                                            <a onclick="return false;" class="title">Cargadores</a>
+                                            <ul>
+                                                <li [routerLink]="['/search/category/Wall charger']"><a>Cargador de pared</a></li>
+                                                <li [routerLink]="['/search/category/Car Charger']"><a>Cargador de coche</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a onclick="return false;" class="title color-2">Otros</a>
+                                            <ul>
+                                                <li [routerLink]="['/search/category/Cable']"><a>Cables</a></li>
+                                                <li [routerLink]="['/search/category/Empaque']"><a>Embalaje</a></li>
+                                                <li [routerLink]="['/search/category/Varios']"><a>Varios</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="angle"><a [routerLink]="['/search/category/Earphones']">Auriculares</a>
+                                    <ul class="category-submenu category-submenu-2">
+                                        <li><a [routerLink]="['/search/category/Earphones']" class="title">Auriculares</a>
+                                            <ul>
+                                                <li><a [routerLink]="['/search/category/BT earphones']">BT earphones</a></li>
+                                                <li><a [routerLink]="['/search/category/TWS Earphones']">TWS earphones</a></li>
+                                                <li><a [routerLink]="['/search/category/Headphones']">Headphones</a></li>
+                                                <li><a [routerLink]="['/search/category/Earphones']">Auriculares</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="angle"><a [routerLink]="['/search/category/Hoverboard']">Movilidad</a>
+                                    <ul class="category-submenu category-submenu-2">
+                                        <li><a [routerLink]="['/search/category/Hoverboard']" class="title">Hoverboard</a>
+                                            <ul>
+                                                <li><a [routerLink]="['/search/category/Monopatin electrico']">Monopatin eléctrico</a></li>
+                                                <li><a [routerLink]="['/search/category/aerotabla']">Aerotabla</a></li>
+                                                <li><a [routerLink]="['/search/category/Scooter electrico']">Scooter eléctrico</a></li>
+                                                <li><a [routerLink]="['/search/category/Bicicleta electrica']">Bicicleta eléctrica</a></li>
+                                                <li><a [routerLink]="['/search/category/Hoverboard']">Hoverboard</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a [routerLink]="['/search/category/Miscelaneo']" class="title color-2">Miscelaneo</a>
+                                            <ul>
+                                                <li><a [routerLink]="['/search/category/Miscelaneo']">Drone</a></li>
+                                                <li><a [routerLink]="['/search/category/Fuente']">Fuentes</a></li>
+                                                <li><a [routerLink]="['/search/category/Power Bank']">Power Bank</a></li>
+                                                <li><a [routerLink]="['/search/category/VR']">Realidad aumentada</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="angle"><a>Computación</a>
+                                    <ul class="category-submenu category-submenu-2">
+                                        <li><a [routerLink]="['/search/category/Tablets']" class="title">Tablets</a>
+                                            <ul>
+                                                <li><a [routerLink]="['/search/category/Spare parts']">Spare parts</a></li>
+                                                <li><a [routerLink]="['/search/category/Tablet']">Tablet</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a [routerLink]="['/search/category/Proyector']" class="title color-2">Audiovisual</a>
+                                            <ul>
+                                                <li><a [routerLink]="['/search/category/Proyector']">Proyector</a></li>
+                                                <li><a [routerLink]="['/search/category/CAMARA']">Cámara</a></li>
+                                                <li><a [routerLink]="['/search/category/Dashcams']">Dashcams</a></li>
+                                                <li><a [routerLink]="['/search/category/TV BOX']">TV Box</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="angle"><a>Seguridad</a>
+                                    <ul class="category-submenu category-submenu-2">
+                                        <li><a [routerLink]="['/search/category/Seguridad']" class="title">Seguridad</a>
+                                            <ul>
+                                                <li><a [routerLink]="['/search/category/Camara de seguridad']">Cámara de seguridad</a></li>
+                                                <li><a [routerLink]="['/search/category/Alarmas']">Alarmas</a></li>
+                                                <li><a [routerLink]="['/search/category/Logistica']">Logistica</a></li>
+                                                <li><a [routerLink]="['/search/category/Pestillo Electrico']">Pestillo Electrico</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a [routerLink]="['/search/category/Seguridad']" class="title color-2">Accesorios</a>
+                                            <ul>
+                                                <li><a [routerLink]="['/search/category/DVR']">DVR</a></li>
+                                                <li><a [routerLink]="['/search/category/Control de presentismo']">Control de presentismo</a></li>
+                                                <li><a [routerLink]="['/search/category/Control de acceso']">Control de acceso</a></li>
+                                                <li><a [routerLink]="['/search/category/NVR']">NVR</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a [routerLink]="['/search/category/Fitness']">Fitness</a></li>
+                                <li><a [routerLink]="['/search/category/Computacion']">Computación</a></li>
+                                <li><a [routerLink]="['/search/category/Internet']">Internet</a></li>
+                                <li><a [routerLink]="['/search/category/Notebook']">Laptops</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <div class="main-menu-area">
+                    <ul>
+                        <li class="active"><a [routerLink]="['/']">Home</a>
+                        </li>
+                        <li><a href="#">Sourcing</a></li>
+                        <li><a target="_blank" href="http://atechjg.com/#preguntas-der">Contactanos</a></li>
+                        <li><a href="http://atechjg.com" target="_blank">Atech website</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-bottom-area-end -->

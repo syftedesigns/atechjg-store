@@ -1,0 +1,524 @@
+<app-sliders></app-sliders>
+<!-- banner-area-start -->
+<div class="banner-area ptb-25">
+    <div class="container">
+        <div class="row">
+            <div class="bg-color">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-banner box2">
+                        <div class="banner-icon">
+                            <a href="#"><i class="zmdi zmdi-refresh-sync zmdi-hc-fw"></i></a>
+                        </div>
+                        <div class="banner-text">
+                            <h2>Asesoramiento comercial</h2>
+                            <p>Te ayudamos a crecer en el mercado competitivo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-banner box2">
+                        <div class="banner-icon">
+                            <a href="#"><i class="zmdi zmdi-phone-ring zmdi-hc-fw"></i></a>
+                        </div>
+                        <div class="banner-text">
+                            <h2>Servicios de posventa</h2>
+                            <p>Servicio de posventa disponible las 24hs, 7 días a la semana</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-banner">
+                        <div class="banner-icon">
+                            <a href="#"><i class="zmdi zmdi-3d-rotation zmdi-hc-fw"></i></a>
+                        </div>
+                        <div class="banner-text">
+                            <h2>Servicios de diseño</h2>
+                            <p>Personalizar los productos con su propia marca</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Start content-->
+<div class="onsaleproduct-area ptb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Sourcing</h2>
+                </div>
+                <div class="saleproduct-active owl-carousel owl-theme" style="opacity: 1; display: block;">
+                    <!-- single-product-start -->
+                    <div class="owl-wrapper-outer">
+                        <div class="owl-wrapper" style="width: 2244px; left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px);">
+                            <owl-carousel-o #owlCar [options]="customOptions">
+                                <ng-container *ngFor="let owl of row1; let i = index">
+                                    <ng-template carouselSlide [id]="owl.id + i">
+                                        <div class="owl-item" style="width: 187px;">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a [title]="owl.nombre" [routerLink]="['/product/' + owl.id]">
+                                                        <img class="image-product-small" [src]="owl.photo" [alt]="owl.nombre">
+                                                    </a>
+                                                </div>
+                                                <div class="product-text">
+                                                    <h3>
+                                                        <a [routerLink]="['/product' + owl.id]">
+                                                            {{owl.nombre}}
+                                                        </a>
+                                                    </h3>
+                                                    <div class="rating">
+                                                        <ul>
+                                                            <li><a onclick="return false"><i class="fa fa-star"></i></a></li>
+                                                            <li><a onclick="return false"><i class="fa fa-star"></i></a></li>
+                                                            <li><a onclick="return false"><i class="fa fa-star"></i></a></li>
+                                                            <!--<li><a href="#"><i class="fa fa-star-half-o"></i></a></li>-->
+                                                            <li><a onclick="return false"><i class="fa fa-star"></i></a></li>
+                                                            <li><a onclick="return false"><i class="fa fa-star"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="price">
+                                                        <ul>
+                                                            <li><span class="new-price">$ {{owl.comentario}}</span></li>
+                                                            <!--<li><span class="old-price">$60.00</span></li>-->
+                                                        </ul>
+                                                    </div>
+                                                    <div class="link-button">
+                                                        <button [routerLink]="['/product/' + owl.id]" style="margin-left: 65%;" mat-raised-button color="primary">
+                                                            <mat-icon>remove_red_eye</mat-icon>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ng-container>
+
+                            </owl-carousel-o>
+                        </div>
+                    </div>
+                    <!-- single-product-end -->
+                    <div class="owl-controls clickable">
+                        <div class="owl-buttons">
+                            <div (click)="owlCar.prev();" class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                            <div (click)="owlCar.next();" class="owl-next"><i class="fa fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end content -->
+<!-- banners -->
+<div class="banner-area mb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                <div class="banner-img mb">
+                    <a [routerLink]="['/search/category/Wall charger']">
+                        <img src="./assets/img/banner/accesorios-celulares2.jpg" alt="accesorios-celulares">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                <div class="banner-img">
+                    <a [routerLink]="['/search/category/Notebook']">
+                        <img style="height: 175px;" src="./assets/img/banner/computadoras.jpg" alt="atech-computadoras">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end banners -->
+
+<!-- long product area -->
+<div class="product-cookware-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <div class="product-header">
+                    <div class="section-title">
+                        <h2>Generales</h2>
+                    </div>
+                    <!-- tab-menu-start -->
+                    <div class="tab-menu text-right">
+                        <ul>
+                            <li class=""><a id="btn-tab-1" href="#Accesorios" data-toggle="tab" aria-expanded="true">Accesorios</a></li>
+                            <li class="active"><a href="#Seguridad" data-toggle="tab" aria-expanded="true">Seguridad</a></li>
+                        </ul>
+                    </div>
+                    <!-- tab-menu-end -->
+                </div>
+                <!-- tab-area-start -->
+                <div class="tab-content">
+                    <div class="tab-pane" id="Accesorios">
+                        <div class="row">
+                            <div [routerLink]="['/search/category/Hoverboard']" class="col-lg-3 hidden-md hidden-sm col-xs-12 banner-slider2">
+                            </div>
+                            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                                <div class="tab-active owl-carousel owl-theme" style="opacity: 1; display: block;">
+                                    <!-- single-tab-start -->
+                                    <div class="owl-wrapper-outer">
+                                        <div class="owl-wrapper carousel-layout-slider">
+                                            <owl-carousel-o [options]="bestSellerTab" #owlSlider2>
+                                                <ng-container *ngFor="let owl of rowSlider2; let i = index">
+                                                    <ng-template carouselSlide [id]="owl.id + i">
+                                                        <div class="owl-item" style="width: 698px;">
+                                                            <div class="single-tab">
+                                                                <div class="tab-text">
+                                                                    <h3><a [routerLink]="['/product/' + owl.id]">{{owl.nombre}}</a></h3>
+                                                                    <div class="tab-price">
+                                                                        <ul>
+                                                                            <li><span class="new-price">${{owl.comentario}}</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <a [routerLink]="['/product/' + owl.id]">Ver el producto</a>
+                                                                </div>
+                                                                <div class="single-tab-img">
+                                                                    <a [routerLink]="['/product/' + owl.id]">
+                                                                        <img style="width: 280px; height: 320px;" [title]="owl.nombre" [src]="owl.photo" [alt]="owl.nombre">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ng-template>
+                                                </ng-container>
+                                            </owl-carousel-o>
+                                        </div>
+                                    </div>
+                                    <!-- single-tab-start -->
+                                    <div class="owl-controls clickable">
+                                        <div class="owl-buttons">
+                                            <div (click)="owlSlider2.prev();" class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                                            <div (click)="owlSlider2.next();" class="owl-next"><i class="fa fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane active" id="Seguridad">
+                        <div class="row">
+                            <div [routerLink]="['/search/category/Seguridad']" class="col-lg-3 hidden-md hidden-sm banner-slider">
+                                <!--<div class="tab-img">
+                                    <a href="#"><img src="./assets/img/banner/security-banner.jpg" alt="atech-security"></a>
+                                </div>-->
+                            </div>
+                            <div class="col-lg-9 col-md-12 col-sm-12">
+                                <div class="tab-active owl-carousel owl-theme" style="opacity: 1; display: block;">
+                                    <!-- single-tab-end -->
+                                    <div class="owl-wrapper-outer">
+                                        <div class="owl-wrapper carousel-layout-slider">
+                                            <owl-carousel-o [options]="bestSellerTab" #owlSlider>
+                                                <ng-container *ngFor="let owl of rowSlider1; let i = index">
+                                                    <ng-template carouselSlide [id]="owl.id + i">
+                                                        <div class="owl-item" style="width: 698px;">
+                                                            <div class="single-tab">
+                                                                <div class="tab-text">
+                                                                    <h3><a [routerLink]="['/product/' + owl.id]">{{owl.nombre}}</a></h3>
+                                                                    <div class="tab-price">
+                                                                        <ul>
+                                                                            <li><span class="new-price">${{owl.comentario}}</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <a [routerLink]="['/product/' + owl.id]">Ver el producto</a>
+                                                                </div>
+                                                                <div class="single-tab-img">
+                                                                    <a [routerLink]="['/product/' + owl.id]">
+                                                                        <img style="width: 280px; height: 320px;" [title]="owl.nombre" [src]="owl.photo" [alt]="owl.nombre">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ng-template>
+                                                </ng-container>
+                                            </owl-carousel-o>
+                                        </div>
+                                    </div>
+                                    <!-- single-tab-start -->
+                                    <div class="owl-controls clickable">
+                                        <div class="owl-buttons">
+                                            <div (click)="owlSlider.prev();" class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                                            <div (click)="owlSlider.next();" class="owl-next"><i class="fa fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- tab-area-end -->
+                <!-- saleproduct-active-2-start -->
+                <div class="saleproduct-active-2 owl-carousel owl-theme" style="opacity: 1; display: block;">
+                    <!-- single-product-start -->
+                    <!-- aqui -->
+                    <div class="owl-wrapper-outer">
+                        <div class="owl-wrapper carousel-layout-row2">
+                            <owl-carousel-o #owl2 [options]="customOptions">
+                                <ng-container *ngFor="let owl of row2; let i = index">
+                                    <ng-template carouselSlide [id]="owl.id + i">
+                                        <div class="owl-item" style="width: 173px;">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a [routerLink]="['/product/' + owl.id]">
+                                                        <img class="image-product-small" [title]="owl.title" [src]="owl.photo" [alt]="owl.title">
+                                                    </a>
+                                                </div>
+                                                <div class="product-text">
+                                                    <h3>
+                                                        <a [routerLink]="['/product/' + owl.id]">
+                                                            {{owl.nombre}}
+                                                        </a>
+                                                    </h3>
+                                                    <div class="rating">
+                                                        <ul>
+                                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="price">
+                                                        <ul>
+                                                            <li><span class="new-price">${{owl.comentario}}</span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="link-button">
+                                                        <button [routerLink]="['/product/' + owl.id]" style="margin-left: 65%;" mat-raised-button color="primary">
+                                                                <mat-icon>remove_red_eye</mat-icon>
+                                                            </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ng-container>
+                            </owl-carousel-o>
+                        </div>
+                    </div>
+                    <!-- single-product-end -->
+                    <div class="owl-controls clickable">
+                        <div class="owl-buttons">
+                            <div (click)="owl2.prev();" class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                            <div (click)="owl2.next();" class="owl-next"><i class="fa fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- saleproduct-active-2-start -->
+                <!-- baner-area-start -->
+                <div class="baner-area mtb-40">
+                    <div class="banner-img">
+                        <a [routerLink]="['/search/category/Earphones']">
+                            <img src="./assets/img/banner/holiday-banner2.jpg" alt="Attech-holiday">
+                        </a>
+                    </div>
+                </div>
+                <!-- baner-area-end -->
+                <div class="product-header">
+                    <div class="section-title">
+                        <h2>Marcas</h2>
+                    </div>
+                    <!-- tab-menu-start -->
+                    <div class="tab-menu text-right">
+                        <ul>
+                            <li class="active"><a href="#Miscelaneo" data-toggle="tab" aria-expanded="true">Miscelaneo</a></li>
+                            <li><a href="#Tablets" data-toggle="tab" aria-expanded="false">Tablets</a></li>
+                        </ul>
+                    </div>
+                    <!-- tab-menu-end -->
+                </div>
+                <!-- tab-area-start -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="Miscelaneo">
+                        <div class="row">
+                            <div [routerLink]="['/search/category/Earphones']" class="col-lg-3 hidden-md hidden-sm col-xs-12 banner-slider3">
+                            </div>
+                            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                                <div class="tab-active owl-carousel owl-theme" style="opacity: 1; display: block;">
+                                    <!-- single-tab-end -->
+                                    <div class="owl-wrapper-outer">
+                                        <div class="owl-wrapper carousel-layout-slider">
+                                            <owl-carousel-o [options]="bestSellerTab" #owlSlider3>
+                                                <ng-container *ngFor="let owl of rowSlider3; let i = index">
+                                                    <ng-template carouselSlide [id]="owl.id + i">
+                                                        <div class="owl-item" style="width: 698px;">
+                                                            <div class="single-tab">
+                                                                <div class="tab-text">
+                                                                    <h3><a [routerLink]="['/product/' + owl.id]">{{owl.nombre}}</a></h3>
+                                                                    <div class="tab-price">
+                                                                        <ul>
+                                                                            <li><span class="new-price">${{owl.comentario}}</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <a [routerLink]="['/product/' + owl.id]">Ver el producto</a>
+                                                                </div>
+                                                                <div class="single-tab-img">
+                                                                    <a [routerLink]="['/product/' + owl.id]">
+                                                                        <img style="width: 280px; height: 320px;" [title]="owl.nombre" [src]="owl.photo" [alt]="owl.nombre">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ng-template>
+                                                </ng-container>
+                                            </owl-carousel-o>
+                                        </div>
+                                    </div>
+                                    <!-- single-tab-start -->
+                                    <div class="owl-controls clickable">
+                                        <div class="owl-buttons">
+                                            <div (click)="owlSlider3.prev();" class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                                            <div (click)="owlSlider3.next();" class="owl-next"><i class="fa fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="Tablets">
+                        <div class="row">
+                            <div [routerLink]="['/search/category/Earphones']" class="col-lg-3 hidden-md hidden-sm col-xs-12 banner-slider3">
+                            </div>
+                            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                                <div class="tab-active owl-carousel owl-theme" style="opacity: 1; display: block;">
+                                    <!-- single-tab-end -->
+                                    <div class="owl-wrapper-outer">
+                                        <div class="owl-wrapper carousel-layout-slider">
+                                            <owl-carousel-o [options]="bestSellerTab" #owlSlider4>
+                                                <ng-container *ngFor="let owl of rowSlider4; let i = index">
+                                                    <ng-template carouselSlide [id]="owl.id + i">
+                                                        <div class="owl-item" style="width: 698px;">
+                                                            <div class="single-tab">
+                                                                <div class="tab-text">
+                                                                    <h3><a [routerLink]="['/product/' + owl.id]">{{owl.nombre}}</a></h3>
+                                                                    <div class="tab-price">
+                                                                        <ul>
+                                                                            <li><span class="new-price">${{owl.comentario}}</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <a [routerLink]="['/product/' + owl.id]">Ver el producto</a>
+                                                                </div>
+                                                                <div class="single-tab-img">
+                                                                    <a [routerLink]="['/product/' + owl.id]">
+                                                                        <img style="width: 280px; height: 320px;" [title]="owl.nombre" [src]="owl.photo" [alt]="owl.nombre">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ng-template>
+                                                </ng-container>
+                                            </owl-carousel-o>
+                                        </div>
+                                    </div>
+                                    <!-- single-tab-start -->
+                                    <div class="owl-controls clickable">
+                                        <div class="owl-buttons">
+                                            <div (click)="owlSlider4.prev();" class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                                            <div (click)="owlSlider4.next();" class="owl-next"><i class="fa fa-angle-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- tab-area-end -->
+                <!-- saleproduct-active-2-start -->
+                <div class="saleproduct-active-2 owl-carousel owl-theme" style="opacity: 1; display: block;">
+                    <!-- single-product-start -->
+                    <div class="owl-wrapper-outer">
+                        <div class="owl-wrapper carousel-layout-row2">
+                            <owl-carousel-o #owl3 [options]="customOptions">
+                                <ng-container *ngFor="let owl of row4; let i = index;">
+                                    <ng-template carouselSlide [id]="owl.id + i">
+                                        <div class="owl-item" style="width: 173px;">
+                                            <div class="single-product">
+                                                <div class="product-img">
+                                                    <a [routerLink]="['/product/' + owl.id]">
+                                                        <img class="image-product-small" [title]="owl.nombre" [src]="owl.photo" [alt]="owl.nombre">
+                                                    </a>
+                                                </div>
+                                                <div class="product-text">
+                                                    <h3>
+                                                        <a [routerLink]="['/product/' + owl.id]">
+                                                            {{owl.nombre}}
+                                                        </a>
+                                                    </h3>
+                                                    <div class="rating">
+                                                        <ul>
+                                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="price">
+                                                        <ul>
+                                                            <li><span class="new-price">${{owl.comentario}}</span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="link-button">
+                                                        <button [routerLink]="['/product/' + owl.id]" style="margin-left: 65%;" mat-raised-button color="primary">
+                                                                <mat-icon>remove_red_eye</mat-icon>
+                                                            </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ng-container>
+                            </owl-carousel-o>
+                        </div>
+                    </div>
+                    <!-- single-product-end -->
+                    <div class="owl-controls clickable">
+                        <div class="owl-buttons">
+                            <div (click)="owl3.prev();" class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                            <div (click)="owl3.next();" class="owl-next"><i class="fa fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- saleproduct-active-2-start -->
+                <!-- baner-area-start -->
+                <div class="baner-area">
+                    <div class="banner-img">
+                        <a [routerLink]="['/search/category/Cable']">
+                            <img src="./assets/img/banner/accesorios-2.jpg" alt="atech-accesorios">
+                        </a>
+                    </div>
+                </div>
+                <!-- baner-area-end -->
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <!-- testimonial-area-start -->
+                <div class="baner-area mb-30">
+                    <div class="banner-img">
+                        <a href="http://atechjg.com/" target="_blank">
+                            <img src="./assets/img/banner/atech-movile.jpg" alt="bannner">
+                        </a>
+                    </div>
+                </div>
+                <!-- testimonial-area-end -->
+                <!-- bestsellerproduct-area-start -->
+
+                <!-- bestsellerproduct-area-start -->
+                <!-- baner-area-start -->
+                <div class="baner-area mb-30">
+                    <div class="banner-img">
+                        <a href="http://atechjg.com/" target="_blank">
+                            <img src="./assets/img/banner/atech-banner.jpg" alt="bannner">
+                        </a>
+                    </div>
+                </div>
+                <!-- baner-area-end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end long product -->

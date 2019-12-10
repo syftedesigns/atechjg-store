@@ -1,0 +1,13 @@
+.owl-container {
+    width: 2792px;
+    left: 0px;
+    display: block;
+    transition: all 0ms ease 0s;
+    transform: translate3d(-698px, 0px, 0px);
+    transform-origin: 1272px center;
+    perspective-origin: 1272px center;
+}
+
+.owl-slide-layout {
+    width: 698px;
+}

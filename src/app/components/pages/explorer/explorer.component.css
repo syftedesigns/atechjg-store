@@ -1,0 +1,11 @@
+@media only screen and (max-width: 480px) {
+    .explorer-layout {
+        margin-top: -10em !important;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .explorer-layout {
+        margin-top: -5em !important;
+    }
+}

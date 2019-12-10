@@ -1,0 +1,20 @@
+.wrapper-related {
+    width: 1870px;
+    left: 0px;
+    display: block;
+    transition: all 0ms ease 0s;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.slider-item {
+    width: 366px !important;
+    margin-right: 0px !important;
+    float: left !important;
+    display: block !important;
+}
+
+.slider-wrapper {
+    width: 1200% !important;
+    transition-duration: 0s !important;
+    transform: translate3d(-1464px, 0px, 0px) !important;
+}

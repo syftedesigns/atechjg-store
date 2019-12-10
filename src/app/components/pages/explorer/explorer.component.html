@@ -1,0 +1,161 @@
+<div class="breadcrumbs-area mb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumbs-menu">
+                    <ul>
+                        <li><a [routerLink]="['/']">Inicio<i class="fa fa-angle-right"></i></a></li>
+                        <li><a onclick="return false;" class="active">Explorador</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="shop-main-area mb-80 explorer-layout">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 pull-right">
+                <div class="left-title-2">
+                    <h3>New Arrivals</h3>
+                </div>
+                <div class="toolbar mb-20">
+                    <div class="shop-tab">
+                        <div class="list-page">
+                            <p>{{QueryToMatch}}</p>
+                        </div>
+                    </div>
+                    <div class="toolbar-sorter">
+                        <form ngNativeValidate>
+                            <span>Ordernar por:</span>
+                            <mat-form-field appearance="fill">
+                                <mat-select required (selectionChange)="FilterProducts($event)" name="sorter" placeholder="Selecciona una opción">
+                                    <mat-option value="id">Posición</mat-option>
+                                    <mat-option value="nombre">Nombre</mat-option>
+                                    <mat-option value="comentario">Precio</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </form>
+                    </div>
+                </div>
+                <!-- tab-area-start -->
+                <div class="tab-content">
+                    <div class="tab-pane active in" id="th">
+                        <div *ngIf="!loading" class="row">
+                            <div *ngFor="let row of StoreProducts; let i = index" class="col col-md-4">
+                                <div class="mb-30">
+                                    <!-- single-product-start -->
+                                    <div class="single-product">
+                                        <div class="product-img">
+                                            <a [routerLink]="['/product/' + row.id]">
+                                                <img [title]="row.nombre" [src]="row.photo" [alt]="row.nombre">
+                                            </a>
+                                        </div>
+                                        <div class="product-text">
+                                            <h3>
+                                                <a [routerLink]="['/product/' + row.id]">
+                                                    {{row.nombre}}
+                                                </a>
+                                            </h3>
+                                            <div class="rating">
+                                                <ul>
+                                                    <li><a onclick="return false;" href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a onclick="return false;" href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a onclick="return false;" href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a onclick="return false;" href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a onclick="return false;" href="#"><i class="fa fa-star"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="price">
+                                                <ul>
+                                                    <li><span class="new-price">${{row.comentario}}</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <mat-spinner *ngIf="loading" class="offset-5"></mat-spinner>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="left-product">
+                    <div class="left-title">
+                        <h3></h3>
+                    </div>
+                    <div class="single-left-area mb-40">
+                        <h3>Filtrar por categoría</h3>
+                        <div class="collapses-group">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed">
+                                                  Ver categorías
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse active" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true" style="height: 0px;">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li>
+                                                    <a onclick="return false;" class="title">Cargadores</a>
+                                                    <ul>
+                                                        <li [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Wall charger'}"><a>Cargador de pared</a></li>
+                                                        <li [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Car Charger'}"><a>Cargador de coche</a></li>
+                                                        <li [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Cable'}"><a>Cables</a></li>
+                                                        <li [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Empaque'}"><a>Embalaje</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Earphones'}">BT earphones</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'TWS Earphones'}">TWS earphones</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Headphones'}">Headphones</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Earphones'}">Auriculares</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Monopatin electrico'}">Monopatin eléctrico</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'aerotabla'}">Aerotabla</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Scooter electrico'}">Scooter eléctrico</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Bicicleta electrica'}">Bicicleta eléctrica</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Hoverboard'}">Hoverboard</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Fuente'}">Fuentes</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Power Bank'}">Power Bank</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'VR'}">Realidad aumentada</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Tablets'}">Tablet</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Proyector'}">Proyector</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'CAMARA'}">Cámara</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Dashcams'}">Dashcams</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'TV BOX'}">TV Box</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Camara de seguridad'}">Cámara de seguridad</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Alarmas'}">Alarmas</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Logistica'}">Logistica</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Pestillo Electrico'}">Pestillo Electrico</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'DVR'}">DVR</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Control de presentismo'}">Control de presentismo</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Control de acceso'}">Control de acceso</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'NVR'}">NVR</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Fitness'}">Fitness</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Computacion'}">Computación</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Internet'}">Internet</a></li>
+                                                        <li><a [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Notebook'}">Laptops</a></li>
+                                                        <li [routerLink]="['/redirect/search/category']" [queryParams]="{haveQuery: true, path: 'Varios'}"><a>Varios</a></li>
+
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner">
+                        <div class="banner-img">
+                            <a href="http://atechjg.com" target="_blank">
+                                <img src="./assets/img/banner/atech-banner.jpg" alt="atech-banner">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
